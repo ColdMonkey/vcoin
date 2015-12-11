@@ -17,6 +17,9 @@ tmp
 node_modules
 bower_components
 
+# Certificates
+certs
+
 # Editors
 .idea
 *.iml
