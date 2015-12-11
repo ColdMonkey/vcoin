@@ -2,7 +2,7 @@ extends layout
 
 block content
   .page-header
-    h3 Contact Form
+    h3 Enter details and Login
 
   form.form-horizontal(role='form', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
@@ -15,7 +15,23 @@ block content
       .col-sm-8
         input.form-control(type='text', name='email', id='email')
     .form-group
-      label(class='col-sm-2 control-label', for='message') Body
+      label(class='col-sm-2 control-label', for='name') Card Number
+      .col-sm-8
+        input.form-control(type='text', name='name', id='name', autofocus=true)
+    .form-group
+      label(class='col-sm-2 control-label', for='name') CVV Number
+      .col-sm-8
+        input.form-control(type='text', name='name', id='name', autofocus=true)
+    .form-group
+      label(class='col-sm-2 control-label', for='name') Month Expiry
+      .col-sm-8
+        input.form-control(type='text', name='name', id='name', autofocus=true)
+    .form-group
+      label(class='col-sm-2 control-label', for='name') Card Expiry
+      .col-sm-8
+        input.form-control(type='text', name='name', id='name', autofocus=true)
+    .form-group
+      label(class='col-sm-2 control-label', for='message') Address
       .col-sm-8
         textarea.form-control(type='text', name='message', id='message', rows='7')
     .form-group
