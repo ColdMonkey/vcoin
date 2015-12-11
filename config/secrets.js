@@ -25,9 +25,13 @@ module.exports = {
 
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
-  visadirect: {
+  visaDirect: {
     username: process.env.VISA_DIRECT_USER || '3GZ0OGDSMZMNBP2XT6AF2190ezXsdECwL1CeKxo_vH95dmXtY',
-    password: process.env.VISA_DIRECT_PASSWORD || 'IhniuPH0r3lWCcm8r3A021oY96W1H0V'
+    password: process.env.VISA_DIRECT_PASSWORD || 'IhniuPH0r3lWCcm8r3A021oY96W1H0V',
+    mutualAuth: {
+      cert: '',
+      key: ''
+    }
   },
 
   mailgun: {
