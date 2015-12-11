@@ -25,11 +25,16 @@ module.exports = {
 
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
+  visadirect: {
+    username: process.env.VISA_DIRECT_USER || '3GZ0OGDSMZMNBP2XT6AF2190ezXsdECwL1CeKxo_vH95dmXtY',
+    password: process.env.VISA_DIRECT_PASSWORD || 'IhniuPH0r3lWCcm8r3A021oY96W1H0V'
+  },
+
   mailgun: {
     user: process.env.MAILGUN_USER || 'postmaster@sandbox697fcddc09814c6b83718b9fd5d4e5dc.mailgun.org',
     password: process.env.MAILGUN_PASSWORD || '29eldds1uri6'
   },
-  
+
   mandrill: {
     user: process.env.MANDRILL_USER || 'hackathonstarterdemo',
     password: process.env.MANDRILL_PASSWORD || 'E1K950_ydLR4mHw12a0ldA'
