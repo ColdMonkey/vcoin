@@ -29,6 +29,7 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var visaDirectController = require('./controllers/visa_direct');
 
 /**
  * API keys and Passport configuration.
@@ -150,6 +151,11 @@ app.get('/api/paypal/cancel', apiController.getPayPalCancel);
 app.get('/api/lob', apiController.getLob);
 app.get('/api/bitgo', apiController.getBitGo);
 app.post('/api/bitgo', apiController.postBitGo);
+
+app.get('/visa_direct/push_funds', visaDirectController.getPushFunds);
+app.post('/visa_direct/push_funds', visaDirectController.postPushFunds);
+app.get('/visa_direct/pull_funds', visaDirectController.getPullFunds);
+app.post('/visa_direct/pull_funds', visaDirectController.postPullFunds);
 
 /**
  * OAuth authentication routes. (Sign in)
