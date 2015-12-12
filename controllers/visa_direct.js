@@ -23,6 +23,7 @@ exports.postPullFunds = function(req, res, next) {
 exports.getPushFunds = function(req, res, next) {
   visaDirectServices.PushFundsTransactions.GET(function(err, result) {
     if (err) {
+      console.log(err);
       next(err);
     }
 

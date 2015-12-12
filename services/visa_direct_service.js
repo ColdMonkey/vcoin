@@ -1,29 +1,32 @@
 var request = require('request');
+var fs = require('fs');
+var path = require('path');
 var visaDirectCredentials = require('../config/secrets').visaDirect;
 var visaDirectEndpoints = require('../config/service_endpoints').visaDirect;
 
 var auth = visaDirectCredentials.username + ':' + visaDirectCredentials.password;
 
-request.defaults({
-  headers: {
-    Accept: 'application/json',
-    Authorization: new Buffer(auth).toString('base64')
-  },
-  json: true,
-  rejectUnauthorized: false,
-  simple: false,
-  resolveWithFullResponse: true,
-  pfx: fs.readFileSync('../certs/vcoin.pfx'),
-  passphrase: 'password'
-});
-
 function getPullFunds(callback) {
-  request.get(visaDirectEndpoints.PullFundsTransactions.GET, function(err, response, body) {
+  var options = {
+    headers: {
+      Accept: 'application/json',
+      Authorization: new Buffer(auth).toString('base64')
+    },
+    url: visaDirectEndpoints.PullFundsTransactions.GET,
+    json: true,
+    rejectUnauthorized: false,
+    simple: false,
+    resolveWithFullResponse: true,
+    pfx: fs.readFileSync(path.resolve(__dirname, 'vcoin.p12')),
+    passphrase: 'password'
+  };
+
+  request.get(options, function(err, response, body) {
     if (err) {
       callback(err);
     }
 
-    callback({
+    callback(null, {
       response: response,
       body: body
     });
@@ -71,12 +74,28 @@ function postPullFunds(callback) {
     },
     feeProgramIndicator: "123"
   };
-  request.post({ url: visaDirectEndpoints.PullFundsTransactions.POST, body: payload }, function(err, response, body) {
+
+  var options = {
+    url: visaDirectEndpoints.PullFundsTransactions.POST,
+    body: payload,
+    headers: {
+      Accept: 'application/json',
+      Authorization: new Buffer(auth).toString('base64')
+    },
+    json: true,
+    rejectUnauthorized: false,
+    simple: false,
+    resolveWithFullResponse: true,
+    pfx: fs.readFileSync(path.resolve(__dirname, 'vcoin.p12')),
+    passphrase: 'password'
+  };
+
+  request.post(options, function(err, response, body) {
     if (err) {
       callback(err);
     }
 
-    callback({
+    callback(null, {
       response: response,
       body: body
     });
@@ -84,12 +103,28 @@ function postPullFunds(callback) {
 }
 
 function getPushFunds(callback) {
-  request.get(visaDirectEndpoints.PushFundsTransactions.GET, function(err, response, body) {
+  var options = {
+    headers: {
+      Accept: 'application/json',
+      Authorization: new Buffer(auth).toString('base64')
+    },
+    url: visaDirectEndpoints.PushFundsTransactions.GET,
+    json: true,
+    rejectUnauthorized: false,
+    simple: false,
+    resolveWithFullResponse: true,
+    pfx: fs.readFileSync(path.resolve(__dirname, 'vcoin.p12')),
+    passphrase: 'password'
+  };
+
+  console.log(options);
+
+  request.get(options, function(err, response, body) {
     if (err) {
       callback(err);
     }
 
-    callback({
+    callback(null, {
       response: response,
       body: body
     });
@@ -132,12 +167,27 @@ function postPushFunds(callback) {
     recipientName: "Saranya"
   };
 
-  request.post({ url: visaDirectEndpoints.PushFundsTransactions.POST, body: payload }, function(err, response, body) {
+  var options = {
+    url: visaDirectEndpoints.PushFundsTransactions.POST,
+    body: payload,
+    headers: {
+      Accept: 'application/json',
+      Authorization: new Buffer(auth).toString('base64')
+    },
+    json: true,
+    rejectUnauthorized: false,
+    simple: false,
+    resolveWithFullResponse: true,
+    pfx: fs.readFileSync(path.resolve(__dirname, 'vcoin.p12')),
+    passphrase: 'password'
+  };
+
+  request.post(options, function(err, response, body) {
     if (err) {
       callback(err);
     }
 
-    callback({
+    callback(null, {
       response: response,
       body: body
     });
