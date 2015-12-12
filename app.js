@@ -128,7 +128,7 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
  */
 
 app.get('/showBalance',chainAPIController.myBalance);
-app.get('/checkout',visaCheckoutController.checkout);
+app.get('/checkout',visaCheckoutController.getCheckout);
 app.get('/buy',buyController.index);
 
 
