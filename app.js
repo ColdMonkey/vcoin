@@ -30,8 +30,8 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var visaDirectController = require('./controllers/visa_direct');
+var chainAPIController = require('./controllers/chain_apis');
 var buyController = require('./controllers/buy');
-
 
 /**
  * API keys and Passport configuration.
@@ -120,6 +120,13 @@ app.post('/account/profile', passportConf.isAuthenticated, userController.postUp
 app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
+
+
+/**
+ * Chain APIs
+ */
+
+app.get('/showBalance',chainAPIController.myBalance);
 app.get('/buy',buyController.index);
 
 
