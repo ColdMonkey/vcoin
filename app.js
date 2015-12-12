@@ -31,6 +31,7 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var visaDirectController = require('./controllers/visa_direct');
 var chainAPIController = require('./controllers/chain_apis');
+var visaCheckoutController = require('./controllers/visa_checkout');
 var buyController = require('./controllers/buy');
 
 /**
@@ -127,6 +128,7 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
  */
 
 app.get('/showBalance',chainAPIController.myBalance);
+app.get('/checkout',visaCheckoutController.checkout);
 app.get('/buy',buyController.index);
 
 
