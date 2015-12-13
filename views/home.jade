@@ -8,11 +8,31 @@ block content
     .col-sm-6
       h2 American Airlines
       p Travel with American Airlines
+    .col-sm-6
+      h2 SouthWest Airlines
+      p Travel with Southwest
   .row
       .col-sm-6
         p
         p
-          a.btn.btn-primary(href='#', role='button') GO with American Airlines »
+          a.btn.btn-primary(href='/showBalance', role='button') 9000 »
+      .col-sm-6
+        p
+        p
+          a.btn.btn-primary(href='/showBalance', role='button') 1000 »
+         // a.btn.btn-primary(href='/showBalance', role='button') Show Balance »
+  .row
+      .col-lg-8
+      h2 Transfer Miles
+  .form-group
+    .col-xs-2
+      input.form-control.col-xs-2(type='miles', name='miles', id='miles', placeholder='Miles')
+  .row
+
+    .col-xs-2
+
+        a.btn.btn-success(href='/showBalance', role='button') Checkout with Miles
+
 
   //    h2 Visa Coin
   //    p Use a Visa Coin
@@ -30,16 +50,8 @@ block content
   //     p
   //     p
   //      a.btn.btn-primary(href='#', role='button') GO with Delta Airlines»
-  .row
-    .col-sm-6
-      h2 Southwest Airlines
-      p Travel with Southwest Airlines
-  .row
-    .col-sm-6
-      p
-      p
-        a.btn.btn-primary(href='#', role='button') GO with Southwest Airlines »
-  .row
+    .row
     .col-sm-6
     .col-sm-6
         a.btn.btn-success(href='/checkout', role='button') Visa Checkout »
+        img.img-rounded.logo(src='../views/visa_checkout.png')
