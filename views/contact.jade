@@ -1,41 +1,76 @@
+//extends layout
+//
+//block content
+//  .page-header
+//    h3 Enter details and Login
+//
+//  form.form-horizontal(role='form', method='POST')
+//    input(type='hidden', name='_csrf', value=_csrf)
+//    .form-group
+//      label(class='col-sm-2 control-label', for='name') Name
+//      .col-sm-8
+//        input.form-control(type='text', name='name', id='name', autofocus=true)
+//    .form-group
+//      label(class='col-sm-2 control-label', for='email') Email
+//      .col-sm-8
+//        input.form-control(type='text', name='email', id='email')
+//    .form-group
+//      label(class='col-sm-2 control-label', for='cardNumber') Card Number
+//      .col-sm-8
+//        input.form-control(type='text', name='name', id='name', autofocus=true)
+//    .form-group
+//      label(class='col-xs-2 control-label', for='cvv') CVV Number
+//      .col-sm-8
+//        input.form-control(type='text', name='name', id='name', autofocus=true)
+//    .form-group
+//      label(class='col-xs-2 control-label', for='month') Month Expiry
+//      .col-sm-8
+//        input.form-control(type='text', name='name', id='name', autofocus=true)
+//    .form-group
+//      label(class='col-xs-2 control-label', for='cardExpiry') Card Expiry
+//      .col-sm-8
+//        input.form-control(type='text', name='name', id='name', autofocus=true)
+//    .form-group
+//      label(class='col-sm-2 control-label', for='address') Address
+//      .col-sm-8
+//        textarea.form-control(type='text', name='message', id='message', rows='7')
+//    .form-group
+//      .col-sm-offset-2.col-sm-8
+//        button.btn.btn-primary(type='submit')
+//          i.fa.fa-envelope
+//          | Send
 extends layout
-
 block content
-  .page-header
-    h3 Enter details and Login
-
-  form.form-horizontal(role='form', method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group
-      label(class='col-sm-2 control-label', for='name') Name
-      .col-sm-8
-        input.form-control(type='text', name='name', id='name', autofocus=true)
-    .form-group
-      label(class='col-sm-2 control-label', for='email') Email
-      .col-sm-8
-        input.form-control(type='text', name='email', id='email')
-    .form-group
-      label(class='col-sm-2 control-label', for='cardNumber') Card Number
-      .col-sm-8
-        input.form-control(type='text', name='name', id='name', autofocus=true)
-    .form-group
-      label(class='col-xs-2 control-label', for='cvv') CVV Number
-      .col-sm-8
-        input.form-control(type='text', name='name', id='name', autofocus=true)
-    .form-group
-      label(class='col-xs-2 control-label', for='month') Month Expiry
-      .col-sm-8
-        input.form-control(type='text', name='name', id='name', autofocus=true)
-    .form-group
-      label(class='col-xs-2 control-label', for='cardExpiry') Card Expiry
-      .col-sm-8
-        input.form-control(type='text', name='name', id='name', autofocus=true)
-    .form-group
-      label(class='col-sm-2 control-label', for='address') Address
-      .col-sm-8
-        textarea.form-control(type='text', name='message', id='message', rows='7')
-    .form-group
-      .col-sm-offset-2.col-sm-8
-        button.btn.btn-primary(type='submit')
-          i.fa.fa-envelope
-          | Send
+  h1 Visa Miles
+  p.lead Select your trip with Visa Sky Miles
+  hr
+  .row
+    .col-xs-12.alert.alert-success Successfull transaction
+      a.alert.alert-sucess.close
+  .row
+    .col-sm-6
+      h2 American Airlines
+      p Travel with American Airlines
+    .col-sm-6
+      h2 SouthWest Airlines
+      p Travel with Southwest
+  .row
+    .col-sm-6
+      p
+      p
+        a.btn.btn-primary(href='/showBalance', role='button') 9000 »
+    .col-sm-6
+      p
+      p
+        a.btn.btn-primary(href='/showBalance', role='button') 1000 »
+      // a.btn.btn-primary(href='/showBalance', role='button') Show Balance »
+  .row
+    .col-lg-8
+    h2 Transfer Miles
+  .form-group
+    .col-xs-2
+      input.form-control.col-xs-2(type='miles', name='miles', id='miles', placeholder='Miles')
+  .row
+    .col-xs-2
+      a.btn.btn-success(href='/showBalance', role='button') Checkout with Miles
+  .row
